@@ -1,0 +1,36 @@
+<section class="login-page-section">
+  <div class="welcome-section">
+    <h3>Crusos RD</h3>
+    <p>El conocimiento te abre puertas!</p>
+    <p>Inscribete hoy</p>
+  </div>
+
+  <div class="form-section">
+    <form class="login-form" [formGroup]="loginForm" (submit)="(login)">
+      <h4 class="login-title">Login</h4>
+      <div class="form-control">
+        <label>Correo electronico</label>
+        <input placeholder="Correo electronico" formControlName="email" />
+      </div>
+      <div class="form-control">
+        <label>Contrasena</label>
+        <input
+          placeholder="Contrasena"
+          formControlName="password"
+          [type]="passwordInputType"
+        />
+        <div class="show-password-div">
+          <input type="checkbox" (change)="passwordToggle()" value="hola" />
+          <label>Mostrar password</label>
+        </div>
+     
+        <label class="credentials-error"  [ngClass]="hasUserEnteredWrongCredentials ? 'show':'hide'">* Usuario o contrasena incorrectos</label>
+      </div>
+      <button class="login-btn" (click)="login()" [disabled]="loginButtonToggle">
+        Iniciar sesion
+      </button>
+    </form>
+
+
+  </div>
+</section>

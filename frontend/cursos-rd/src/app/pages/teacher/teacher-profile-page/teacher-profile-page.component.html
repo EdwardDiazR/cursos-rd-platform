@@ -1,0 +1,33 @@
+<body *ngIf="teacher">
+  <app-account-verification-alert
+    [teacher]="teacher"
+    [showAccountConfirmationNotification]="showAccountConfirmationNotification"
+  ></app-account-verification-alert>
+
+  <div class="container">
+    <div class="menu-side">
+      <nav>
+        <ul class="menu-options">
+          <li
+            routerLink="general"
+            ariaCurrentWhenActive="page"
+            routerLinkActive="active"
+          >
+            Informacion
+          </li>
+          <li
+            routerLink="security"
+            ariaCurrentWhenActive="page"
+            routerLinkActive="active"
+          >
+            Seguridad
+          </li>
+          <li>Pagos</li>
+        </ul>
+      </nav>
+    </div>
+    <div class="content-side">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</body>

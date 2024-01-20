@@ -1,0 +1,213 @@
+
+<body>
+  <h1>Nuevo curso</h1>
+  <div class="course-info">
+    <h3>Informacion del curso</h3>
+    <form
+      class="form"
+      [formGroup]="courseForm"
+      (submit)="createCourse()"
+      (change)="setKeyword()"
+    >
+      <div class="form-control">
+        <label>Titulo</label>
+        <input
+          type="text"
+          placeholder="Titulo del curso"
+          formControlName="courseName"
+        />
+      </div>
+
+      <!-- palabras claves -->
+      <div class="form-control">
+        <label>Palabras claves para el titulo (Minimo 4)</label>
+        <div class="controls-section">
+          <div class="keword-inputs">
+            <div class="form-control">
+              <input
+                placeholder="Inserte una palabra clave"
+                formControlName="firstKeyword"
+                (ngModelChange)="setKeyword()"
+              />
+              <ng-container
+                *ngIf="
+                courseForm.get('firstKeyword')?.touched &&
+                courseForm.get('firstKeyword')?.errors?.['required']"
+              >
+                <label class="error-text">*Obligatiorio</label>
+              </ng-container>
+              
+              <ng-container
+                *ngIf="courseForm.get('firstKeyword')?.touched && courseForm.get('firstKeyword')?.errors?.['pattern']"
+              >
+                <label class="error-text"
+                  >* La palabra clave no puede tener caracteres
+                  especiales</label
+                >
+              </ng-container>
+            </div>
+            <div class="form-control">
+              <input
+                placeholder="Inserte una palabra clave"
+                formControlName="secondKeyword"
+                (ngModelChange)="setKeyword()"
+              />
+              <ng-container
+                *ngIf="
+              courseForm.get('secondKeyword')?.touched &&
+              courseForm.get('secondKeyword')?.errors?.['required']"
+              >
+                <label class="error-text">*Obligatiorio</label>
+              </ng-container>
+              
+              <ng-container
+                *ngIf="courseForm.get('secondKeyword')?.touched && courseForm.get('secondKeyword')?.errors?.['pattern']"
+              >
+                <label class="error-text"
+                  >* La palabra clave no puede tener caracteres
+                  especiales</label
+                >
+              </ng-container>
+            </div>
+            <div class="form-control">
+              <input
+                placeholder="Inserte una palabra clave"
+                formControlName="thirdKeyword"
+                (ngModelChange)="setKeyword()"
+              />
+              <ng-container
+                *ngIf="
+              courseForm.get('thirdKeyword')?.touched &&
+              courseForm.get('thirdKeyword')?.errors?.['required']"
+              >
+                <label class="error-text">*Obligatiorio</label>
+              </ng-container>
+              
+              <ng-container
+                *ngIf="courseForm.get('thirdKeyword')?.touched && courseForm.get('thirdKeyword')?.errors?.['pattern']"
+              >
+                <label class="error-text"
+                  >* La palabra clave no puede tener caracteres
+                  especiales</label
+                >
+              </ng-container>
+            </div>
+            <div class="form-control">
+              <input
+                placeholder="Inserte una palabra clave"
+                formControlName="fourthKeyword"
+                (ngModelChange)="setKeyword()"
+              />
+              <ng-container
+                *ngIf="
+              courseForm.get('fourthKeyword')?.touched &&
+              courseForm.get('fourthKeyword')?.errors?.['required']"
+              >
+                <label class="error-text">*Obligatiorio</label>
+              </ng-container>
+
+              <ng-container
+                *ngIf="courseForm.get('fourthKeyword')?.touched && courseForm.get('fourthKeyword')?.errors?.['pattern']"
+              >
+                <label class="error-text"
+                  >* La palabra clave no puede tener caracteres
+                  especiales</label
+                >
+              </ng-container>
+            </div>
+          </div>
+
+          <div class="keyword-detail__section">
+            <div class="url-preview">
+              <label>La url de tu curso se veria asi:</label>
+              <label class="url">
+                www.cursosrd.com/course/{{ urlTitlePreview }}</label
+              >
+            </div>
+            <ul class="keywords-list">
+              Palabras clave:
+              <li *ngFor="let item of titleKeywords">
+                <label>
+                  {{ item }}
+                </label>
+                <!-- <button (click)="removeKeyword(i)">Del</button> -->
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- <div class="keyword-input-section">
+        <input
+          type="text"
+          formControlName="titleKeywords"
+          (keyup.Space)="show()"
+         (ngModelChange)="getUrlTitlePreview($event)"
+          [maxlength]="disableWriteMoreKeywords"
+          class="keyboardInput"
+        />
+        <button (click)="agregarKeyword()">Agregar palabra</button>
+      </div> -->
+
+        <div class="errors-div">
+          <ng-container
+            *ngIf="
+              courseForm.get('titleKeywords')?.touched &&
+              titleKeywords.length < maximumKewordsAllowed
+            "
+          >
+            <label class="error-text"
+              >*Se requiere minimo
+              <strong>{{ maximumKewordsAllowed }}</strong> palabras
+              claves</label
+            >
+          </ng-container>
+
+          <!-- <ng-container *ngIf="containsSpecialCharacters">
+            <label class="error-text"
+              >*Palabras claves no pueden contener caracteres especiales (Eliminalo para seguir editando)</label
+            >
+          </ng-container> -->
+          <ng-container
+            *ngIf=" courseForm.get('titleKeywords')?.touched && courseForm.get('titleKeywords')?.errors?.['pattern'] "
+          >
+            <label class="error-text"
+              >*Error paatern Palabras claves no pueden contener caracteres
+              especiales (Eliminalo para seguir editando)</label
+            >
+          </ng-container>
+        </div>
+      </div>
+      <div class="form-control">
+        <label>Descripcion</label>
+        <input
+          type="text"
+          placeholder="Descripcion del curso"
+          formControlName="courseDescription"
+        />
+      </div>
+      <div class="form-control">
+        <label> Precio </label>
+        <input
+          type="number"
+          placeholder="Precio"
+          formControlName="coursePrice"
+        />
+      </div>
+      <div class="form-control date-input">
+        <label>Fecha de publicacion</label>
+        <input type="date" formControlName="publishedDate" />
+      </div>
+      <div class="form-control">
+        <label>Idioma</label>
+        <select formControlName="courseLanguage">
+          <option value="SPANISH">Espanol</option>
+          <option value="ENGLISH">Ingles</option>
+        </select>
+      </div>
+      <div class="form-control"></div>
+      <div class="form-control"></div>
+
+      <input type="submit" value="GUARDAR" />
+    </form>
+  </div>
+</body>

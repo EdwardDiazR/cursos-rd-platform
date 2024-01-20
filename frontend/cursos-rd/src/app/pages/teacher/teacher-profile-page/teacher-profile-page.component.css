@@ -1,0 +1,42 @@
+body {
+  padding: 0;
+  margin: 0;
+
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 5px;
+  
+
+}
+
+.menu-side {
+  display: flex;
+  flex-direction: column;
+  width: 220px;
+}
+
+.menu-options {
+  list-style: none;
+  padding: 3px;
+  margin: 0;
+  background-color: black;
+  color: white;
+  height: 100%;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-options > li {
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.content-side {
+  width: 100%;
+  height: 100%;
+}

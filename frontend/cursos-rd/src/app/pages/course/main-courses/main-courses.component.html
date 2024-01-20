@@ -1,0 +1,12 @@
+<div class="teacher-courses__list">
+  <div class="header">
+    <span> Mis cursos ({{teacherCoursesQuantity}})</span>
+    <a *ngIf="teacher" routerLink="/teacher/{{teacher.displayName}}/my-courses/new" class="new-course__link">Crear nuevo curso</a>
+  </div>
+  <app-teacher-courses-list
+  class="courses-list__component"
+    [teacherId]="_loggedUserInfo.profileId"
+    [teacher]="teacher"
+    (CoursesQuantity)="getCoursesQuantity($event)"
+  ></app-teacher-courses-list>
+</div>

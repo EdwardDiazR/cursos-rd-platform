@@ -1,0 +1,91 @@
+<ng-container
+  *ngIf="userIsLogged == true && loggedUserInfo.roleId == 1 && teacher"
+>
+  <nav class="nav-container">
+    <ng-container *ngIf="showMobileSideMenu ? 'show' : 'hide'">
+      <div class="mobile__nav-bar">
+        <button class="hamburger-menu__icon" (click)="mobileSideMenuToggle()">
+          <img src="../../../assets/icons/ham-menu_icon.png" class="ham-icon" />
+        </button>
+
+        <div
+          class="mobile__side-menu__container"
+          [ngClass]="showMobileSideMenu ? 'show' : 'hide'"
+        >
+          <div class="mobile__side-menu">
+            <div class="mobile-top-section">
+              <span>Menu</span>
+              <button (click)="mobileSideMenuToggle()" class="close-btn">
+                <img src="../../../assets/icons/close-icon-x.png" />
+              </button>
+            </div>
+
+            <!-- //Mobile links section -->
+            <ul class="mobile-menu__links">
+              <li class="list-item" (click)="linkPressed()">
+                <a routerLink="/teacher/{{ teacher.displayName }}/feed"
+                  >Inicio</a
+                >
+              </li>
+              <li class="list-item" (click)="linkPressed()">
+                <a
+                  routerLink="/teacher/{{ teacher.displayName }}/my-courses"
+                  routerLinkActive="active"
+                  ariaCurrentWhenActive="page"
+                >
+                  Mis cursos</a
+                >
+              </li>
+
+              <li class="list-item">
+                <a>Estadisticas</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="!showMobileSideMenu ? 'show' : 'hide'">
+      <div
+        class="computer__nav-bar"
+        [ngClass]="!showMobileSideMenu ? 'show' : 'hide'"
+      >
+        <div class="links__section">
+          <ul class="top-menu__links-list">
+            <li class="list-item">
+              <a routerLink="/teacher/{{ teacher.displayName }}/feed">Inicio</a>
+            </li>
+            <li class="list-item">
+              <a
+                routerLink="/teacher/{{ teacher.displayName }}/my-courses"
+                routerLinkActive="active"
+                ariaCurrentWhenActive="page"
+              >
+                Mis cursos</a
+              >
+            </li>
+
+            <li class="list-item">
+              <a>Estadisticas</a>
+            </li>
+          </ul>
+        </div>
+        <div class="user-controls">
+          <a
+            routerLink="/teacher/{{ teacher.displayName }}/profile"
+            ariaCurrentWhenActive="page"
+            class="profile-image__link"
+          >
+            <app-profile-image
+              [teacher]="teacher"
+              class="profile-image"
+            ></app-profile-image
+          ></a>
+          <!-- <p>{{ UserInfo.firstName }}</p> -->
+          <a (click)="logout()" class="close-session__btn">Cerrar sesion</a>
+        </div>
+      </div>
+    </ng-container>
+  </nav>
+</ng-container>

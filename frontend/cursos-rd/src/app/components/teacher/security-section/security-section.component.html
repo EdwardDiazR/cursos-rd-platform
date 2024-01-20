@@ -1,0 +1,24 @@
+<body>
+
+    <h3>Seguridad</h3>
+  <form class="change-password__form">
+    <h3>Cambiar contrasena</h3>
+    <div class="form-control">
+      <label>Contrasena actual</label>
+      <input placeholder="Contrasena actual" type="password" />
+    </div>
+    <div class="form-control">
+      <label>Contrasena nueva</label>
+      <input placeholder="Contrasena actual" type="password" />
+    </div>
+    <div class="form-control">
+      <label>Confirme contrasena nueva</label>
+      <input placeholder="Contrasena actual" type="password" />
+    </div>
+
+    <div class="change-password__action-buttons">
+      <button (submit)="changePassword()">Cambiar contrasena</button>
+      <button (reset)="discardChangePassword()">Descartar</button>
+    </div>
+  </form>
+</body>

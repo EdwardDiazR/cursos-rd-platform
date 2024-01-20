@@ -1,0 +1,50 @@
+<main class="profile-page__container" *ngIf="user && teacher">
+  <div class="top-bar">
+    <app-account-verification-alert
+      *ngIf="showAccountConfirmationNotification"
+      [teacher]="teacher"
+      [showAccountConfirmationNotification]="
+        showAccountConfirmationNotification
+      "
+    ></app-account-verification-alert>
+  </div>
+
+  <div class="profile-info__banner">
+    <div class="profile-image__container">
+      <app-profile-image
+        class="profile-image"
+        [teacher]="teacher"
+      ></app-profile-image>
+    </div>
+
+    <div class="teacher-info__section">
+      <p>
+        Hola,
+        <strong
+          >{{ teacher.firstName }}{{ " "
+          }}{{ teacher.middleName && teacher.middleName[0] + "." }}</strong
+        >
+      </p>
+      <div class="profile-bio">
+        <p>
+          {{ teacher.biography }}
+          SOY UN PROFESIONAL CON MAS DE 10 ANOS DE EXPERIENCIA EN SECTOR IT , HE
+          TRABAJADO PARA AMAZON, META, Y OTRAS STARTUPS
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <section class="teacher-courses-section">
+    <h2 class="top-courses__title" *ngIf="teacherHasCourses">
+      Tus cursos mas vendidos de este mes
+      <div class="divider"></div>
+    </h2>
+
+    <app-teacher-courses-list
+      class="courses-component"
+      [teacherId]="user.profileId"
+      [teacher]="teacher"
+    ></app-teacher-courses-list>
+  </section>
+</main>

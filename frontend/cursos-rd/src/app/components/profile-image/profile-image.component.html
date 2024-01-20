@@ -1,0 +1,12 @@
+<div class="profile-image__container">
+  <img
+    *ngIf="teacher && teacher.profileImageUrl.length"
+    src="{{ teacher.profileImageUrl }}"
+  />
+
+  <div class="letter-profile"  *ngIf="teacher&& !teacher.profileImageUrl.length">
+    <label
+      >{{ teacher.firstName[0] }}{{ teacher.lastName[0] }}</label
+    >
+  </div>
+</div>

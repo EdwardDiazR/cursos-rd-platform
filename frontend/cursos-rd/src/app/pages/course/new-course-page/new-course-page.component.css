@@ -1,0 +1,127 @@
+body {
+  padding: 0px 8px;
+}
+
+.error-text {
+  color: red;
+  font-size: 0.9rem;
+}
+
+.errors-div {
+  display: flex;
+  flex-direction: column;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.form-control {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-control > input {
+  height: 30px;
+  padding: 5px;
+  border: 0.5px solid;
+  border-radius: 5px;
+}
+
+.form-control > select {
+  width: fit-content;
+  height: 30px;
+}
+
+.keyword-input-section {
+  display: flex;
+  flex-direction: row;
+}
+.keyboardInput {
+  width: fit-content;
+}
+.date-input {
+  width: fit-content;
+}
+
+input:focus-visible {
+  outline: none;
+}
+.keyword-detail__section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+  
+    box-sizing: border-box;
+   
+    gap: 10px;
+    max-height: 100%;
+    width: 50%;
+    align-items: center;
+    background-color: red;
+    color: white;
+}
+.keywords-list {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  padding: 5px;
+  box-sizing: border-box;
+  margin: 0;
+  gap: 10px;
+  max-height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.keywords-list > li {
+  background-color: gray;
+  min-width: 50px;
+  height: 38px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.url-preview{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    background-color: white;
+    color: black;
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.url{
+    font-style: italic;
+}
+
+.hide {
+  display: none;
+}
+
+.controls-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.keword-inputs {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  gap: 5px;
+}
+.keword-inputs > input {
+  height: 30px;
+}

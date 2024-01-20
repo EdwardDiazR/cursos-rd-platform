@@ -1,0 +1,52 @@
+<body>
+  <div class="top-bar">
+    <h3>Informacion general</h3>
+    <button routerLink="edit">Editar perfil</button>
+  </div>
+  <div class="root-container">
+    <div class="profile-image__section">
+      <span>Imagen del perfil</span>
+
+      <div class="profile-image__container">
+        <app-profile-image
+          [teacher]="teacher"
+          *ngIf="teacher.profileImageUrl"
+          class="profile-image-component"
+        ></app-profile-image>
+        <span *ngIf="!teacher.profileImageUrl"> Aun no tienes foto</span>
+      </div>
+
+      <form class="update-image__form">
+        <input type="file" />
+
+        <button>Actualizar imagen</button>
+      </form>
+    </div>
+    <form class="info-form">
+      <div class="form-control">
+        <label for="teacher-profile-status">Status del perfil</label>
+        <input
+          id="teacher-profile-status"
+          value="{{ teacher.isActive ? 'Activo' : 'Inactivo' }}"
+          readonly
+        />
+      </div>
+
+      <div class="form-control">
+        <label for="teacher-email">Nombre de usuario</label>
+        <input id="teacher-email" value="{{ teacher.displayName }}" readonly />
+      </div>
+      <div class="form-control">
+        <label for="teacher-email">Correo</label>
+        <input id="teacher-email" value="{{ teacher.email }}" readonly />
+      </div>
+      <!-- <div class="form-control"></div>
+      <div class="form-control"></div>
+      <div class="form-control"></div>
+      <div class="form-control"></div> -->
+
+      <button>Guardar cambios</button>
+      <button>Descartar cambios</button>
+    </form>
+  </div>
+</body>

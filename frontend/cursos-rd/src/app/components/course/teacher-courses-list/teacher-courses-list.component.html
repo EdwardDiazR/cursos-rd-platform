@@ -1,0 +1,35 @@
+
+<!-- Render this container when there is no courses -->
+<ng-container *ngIf="isLoading == false && TeacherCourses.length == 0">
+  <div class="status__message">
+    <div
+      *ngIf="isLoading == false && TeacherCourses.length == 0"
+      class="no-courses__message"
+    >
+      <span>
+        Aun no tienes cursos disponibles. <strong>¡Animate!</strong>, un mundo
+        de estudiantes espera por ti.
+      </span>
+      <button class="add-new-course__btn">
+        <a
+          routerLink="/teacher/{{ teacher.displayName }}/my-courses/new"
+          class="new-course__link"
+          >Agregar nuevo curso</a
+        >
+      </button>
+    </div>
+  </div>
+</ng-container>
+
+
+
+<h3 *ngIf="isLoading == true && TeacherCourses.length == 0">
+  Cargando cursos....
+</h3>
+<ng-container *ngIf="TeacherCourses.length">
+  <ul class="course-list">
+    <li class="list-item-li" *ngFor="let course of TeacherCourses">
+      <app-course-list-item [Course]="course"></app-course-list-item>
+    </li>
+  </ul>
+</ng-container>

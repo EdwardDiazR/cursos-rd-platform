@@ -1,0 +1,28 @@
+body{
+    width: 100%;
+}
+
+.change-password__form{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    padding: 0;
+    border-radius: 8px;
+    border: 1px solid;
+    padding: 5px;
+    justify-content: center;
+    align-content: center;
+    gap: 10px;
+}
+
+.form-control{
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+
+.change-password__action-buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

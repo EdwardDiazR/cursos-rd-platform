@@ -1,0 +1,11 @@
+<div
+  class="alert-notification"
+  [ngClass]="showAccountConfirmationNotification ? 'show' : 'hide'"
+>
+  <p>
+    <strong>{{ teacher.firstName }}</strong
+    >, Aun tienes pendiente la <strong> confirmacion</strong> de tu cuenta!
+    <a href="javascript:;">Verificar cuenta</a>
+  </p>
+  <button (click)="hideConfirmationAlert()">Close</button>
+</div>

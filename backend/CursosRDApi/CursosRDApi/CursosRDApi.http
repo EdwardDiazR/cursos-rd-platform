@@ -1,0 +1,6 @@
+@CursosRDApi_HostAddress = http://localhost:5129
+
+GET {{CursosRDApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

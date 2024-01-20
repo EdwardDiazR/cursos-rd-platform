@@ -1,0 +1,11 @@
+<body [ngClass]="isShowingMobileNav ? 'block-overflow' : 'dont-block'">
+  <app-nav-bar
+    class="nav"
+    (isShowingMobile)="isMobileNavBar($event)"
+  ></app-nav-bar>
+
+  <router-outlet
+    [ngClass]="isLogged == true ? 'outlet' : 'outlet no-margin'"
+    class="outlet"
+  ></router-outlet>
+</body>

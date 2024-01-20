@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Roboto&display=swap");
+@font-face {
+  font-family:'aeonik' ;
+  src: url('../assets/fonts/Aeonik-Regular.otf');
+}
+* {
+  font-family: 'aeonik'
+}
+
+.nav {
+  /* position: fixed;
+  top: 0;
+  margin-bottom: 10px;
+  padding: 0;
+
+  width: 100%; */
+}
+
+.block-overflow {
+  overflow-y: hidden;
+  height: 100%;
+
+  body {
+    height: 100%;
+  }
+}
+
+.dont-block {
+  overflow-y: hidden;
+}
+
+.outlet {
+  display: flex;
+  /* margin-top: 60px; */
+  padding: 0px;
+  box-sizing: border-box;
+  /* border-top: 2px solid blue; */
+}
+
+.no-margin {
+  padding: 0px;
+  margin: 0;
+  margin-top: 0;
+  border: none;
+}

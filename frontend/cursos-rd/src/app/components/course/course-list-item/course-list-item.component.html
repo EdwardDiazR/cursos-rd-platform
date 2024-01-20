@@ -1,0 +1,33 @@
+<div
+  class="course-item-wrapper"
+ 
+  routerLinkActive="active"
+  ariaCurrentWhenActive="page"
+  (click)="getCourseDetail()"
+>
+  <div class="thumbnail-container">
+    <img
+      src="https://cdn6.f-cdn.com/contestentries/1162950/18299824/59ef996d1981d_thumb900.jpg"
+    />
+  </div>
+  <!-- <div class="status-info">
+    
+  </div> -->
+  <div class="info-container">
+    <h5>{{ Course.name }}</h5>
+
+    <span class="course-description">{{ Course.description }}</span>
+    <span
+      >Visibilidad:
+      <strong [ngClass]="Course.isPublic ? 'public' : 'private'">{{
+        Course.isPublic ? "Publico" : "Privado"
+      }}</strong></span
+    >
+
+    <span>Price:{{ Course.price | currency }}</span>
+  </div>
+  <div class="course-actions">
+    <button>Enroll Now</button>
+    <button>Add to watchlist</button>
+  </div>
+</div>
