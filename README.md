@@ -1,1 +1,3 @@
-# cursos-rd-platform
+Cursos RD! 
+
+Un proyecto de cursos Online
